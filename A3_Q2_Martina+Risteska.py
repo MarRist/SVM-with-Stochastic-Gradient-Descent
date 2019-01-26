@@ -1,13 +1,6 @@
 
-# coding: utf-8
-
-# In[57]:
-
-
-# Martina Risteska (ID: 1003421781)
-
 '''
-Question 2 - Training SVM with SGD
+Training SVM with SGD
 
 '''
 
@@ -27,8 +20,7 @@ np.random.seed(1847)
 class BatchSampler(object):
     '''
     A (very) simple wrapper to randomly sample batches without replacement.
-
-    You shouldn't need to touch this.
+    
     '''
     
     def __init__(self, data, targets, batch_size):
@@ -41,7 +33,7 @@ class BatchSampler(object):
 
         self.indices = np.arange(self.num_points)
 
-    def random_batch_indices(self, m=None):
+    def random_batch_indices(self, m = None):
         '''
         Get random batch indices without replacement from the dataset.
 
@@ -53,7 +45,7 @@ class BatchSampler(object):
             indices = np.random.choice(self.indices, m, replace=False)
         return indices 
 
-    def get_batch(self, m=None):
+    def get_batch(self, m = None):
         '''
         Get a random batch without replacement from the dataset.
 
@@ -80,8 +72,7 @@ class GDOptimizer(object):
         self.vel = 0.0
 
     def update_params(self, params, grad):
-        # Update parameters using GD with momentum and return
-        # the updated parameters
+        # Update parameters using GD with momentum and return the updated parameters
         params_updated = []
         for g, w in zip(grad, params):
         
@@ -127,6 +118,7 @@ class SVM(object):
 
         Returns the gradient with respect to the SVM parameters (shape (m,)).
         '''
+        
         # Compute (sub-)gradient of SVM objective
         n = X.shape[0]
         m = X.shape[1]
@@ -151,6 +143,7 @@ class SVM(object):
 
         Returns the predicted class labels (shape (n,))
         '''
+        
         # Classify points as +1 or -1
         n = X.shape[0]
         y_pred = np.zeros((n,))
@@ -219,7 +212,7 @@ def optimize_svm(train_data, train_targets, penalty, optimizer, batchsize, iters
     '''
     Optimize the SVM with the given hyperparameters. Return the trained SVM.
 
-    SVM weights can be updated using the attribute 'w'. i.e. 'svm.w = updated_weights'
+    SVM weights are updated using the attribute 'w'. i.e. 'svm.w = updated_weights'
     '''
     feature_count = train_data.shape[1]
     batch_sampler = BatchSampler(train_data, train_targets, batchsize)
@@ -238,6 +231,10 @@ def optimize_svm(train_data, train_targets, penalty, optimizer, batchsize, iters
     return SVM_object
 
 def visualize(param_history1, param_history2):
+    '''
+    Vizualization of the convergence of the gradient decent and gradient decent with momentum.
+
+    '''
     
     k = range(0,len(param_history1))
     
@@ -271,7 +268,7 @@ def plot_images(parameters1, parameters2):
     
 if __name__ == '__main__':
     
-    # PART 2.1 Verification of the SGD with momentum implementation
+    # Verification of the SGD with momentum implementation
     learning_rate = 1.0
     beta = [0.0, 0.9]
     parameter_history = []
@@ -283,7 +280,7 @@ if __name__ == '__main__':
     visualize(parameter_history[0], parameter_history[1])
     
     
-    # PART 2.2/2.3 Training SVM
+    # TRAINING SVM
     # Load data 
     X_train, y_train, X_test, y_test = load_data()
     X_train = np.c_[ np.ones(X_train.shape[0]), X_train] # creating a design matrix
@@ -297,7 +294,7 @@ if __name__ == '__main__':
     beta1 = 0.0
     beta2 = 0.1
     
-    # create two optimizers with different beta values
+    # Create two optimizers with different beta values
     SGD_optimizer_1 = GDOptimizer(learning_rate, beta1)
     SGD_optimizer_2 = GDOptimizer(learning_rate, beta2)
     
