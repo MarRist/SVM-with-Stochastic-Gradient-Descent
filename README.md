@@ -3,7 +3,7 @@ This repository contains projects that were written for Machine Learning course 
 
 This is an implementation of Stochastic Gradient Descent with momentum β and learning rate α. The implemented algorithm is then used to approximately optimize the SVM objective.
 
-The algoritham is tested on the MNIST dataset. MNIST is a digit classification dataset consisting of 28 × 28 grayscale images of hand-drawn digits labelled from 0 to 9. In particular, we solve a binary classification problem by trying to classify 4 vs. 9 (the hardest 1-vs-1 pair) and discarding the rest of the classes. 
+The algoritham is tested on the MNIST dataset. MNIST is a digit classification dataset consisting of 28 × 28 grayscale images of hand-drawn digits labelled from 0 to 9. In particular, this implementation solves a binary classification problem by trying to classify 4 vs. 9 (the hardest 1-vs-1 pair) and discards the rest of the classes. 
 
 The dataset is split into 80% train and 20% test, and the images are converted to vectors by flattening them to a vector of size 784.
 
