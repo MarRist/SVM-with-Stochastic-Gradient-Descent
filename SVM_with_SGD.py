@@ -64,6 +64,7 @@ class GDOptimizer(object):
 
         lr - learning rate
         beta - momentum hyperparameter
+        vel - velocity
     '''
 
     def __init__(self, lr, beta):
@@ -72,7 +73,9 @@ class GDOptimizer(object):
         self.vel = 0.0
 
     def update_params(self, params, grad):
-        # Update parameters using GD with momentum and return the updated parameters
+        '''
+        Update parameters (params) using GD with momentum (grad) and return the updated params
+        '''
         params_updated = []
         for g, w in zip(grad, params):
         
@@ -232,7 +235,8 @@ def optimize_svm(train_data, train_targets, penalty, optimizer, batchsize, iters
 
 def visualize(param_history1, param_history2):
     '''
-    Vizualization of the convergence of the gradient decent and gradient decent with momentum.
+    Vizualization of the convergence of the gradient decent (param_history1)
+    and gradient decent with momentum (param_history2).
 
     '''
     
