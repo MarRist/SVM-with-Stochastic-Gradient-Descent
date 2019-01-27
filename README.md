@@ -25,7 +25,7 @@ For training and evaluating the SVM classifier, run `SVM_with_SGD`.
 
 where the w are the SVM model parameters, b is the bias term, C is the penalty parameter for misclassifying the classes, and N is the batch size. The first term in the objective is the regularization term where the second one is known as the hinge loss.
 
-** The gradient of the hinge loss was calculated using sub-gradients:
+* The gradient of the hinge loss was calculated using sub-gradients:
 
 ![eq3](https://latex.codecogs.com/gif.latex?%5Cnabla_w%20Hinge%20Loss%20%3D%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D%20-y%5E%7B%28i%29%7D%20%5Ctextbf%7Bx%7D%5E%7B%28i%29%7D%2C%20%26%20y%5E%7B%28i%29%7D%28%5Ctextbf%7Bw%7D%5ET%20%5Ctextbf%7Bx%7D%5E%7B%28i%29%7D%20&plus;%20b%29%20%3C%201%5C%5C%200%2C%20%26%20y%5E%7B%28i%29%7D%28%5Ctextbf%7Bw%7D%5ET%20%5Ctextbf%7Bx%7D%5E%7B%28i%29%7D%20&plus;%20b%29%20%5Cgeq%201%20%5Cend%7Bmatrix%7D%5Cright.)
 
