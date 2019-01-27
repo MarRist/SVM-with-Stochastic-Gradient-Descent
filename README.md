@@ -1,5 +1,5 @@
 # SVM with Stochastic Gradient Descent
-This repository contains projects that were written for Machine Learning course at University of Toronto.
+This repository contains a project that was written as part of the Machine Learning course at University of Toronto.
 
 This is an implementation of Stochastic Gradient Descent with momentum β and learning rate α. The implemented algorithm is then used to approximately optimize the SVM objective.
 
