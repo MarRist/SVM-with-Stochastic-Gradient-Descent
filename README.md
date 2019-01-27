@@ -7,7 +7,7 @@ The algoritham is tested on the [MNIST dataset](http://yann.lecun.com/exdb/mnist
 
 The dataset is split into 80% train and 20% test, and the images are converted to vectors by flattening them to a vector of size 784.
 
-For training and evaluating the SVM classifier, run ``.
+For training and evaluating the SVM classifier, run `SVM_with_SGD`.
 
 ### Descrption of code implementation:
 
