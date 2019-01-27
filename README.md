@@ -11,7 +11,7 @@ For training and evaluating the SVM classifier, run `SVM_with_SGD`.
 
 ### Descrption of code implementation:
 
-* In this inplementation, two SVM models are being trained using gradient descent with a learning rate of α = 0.05, a penalty of C = 1.0, minibatch sizes of m = 100, and T = 500 total iterations. For the first model use β = 0 and for the second use β = 0.1.
+* In this inplementation, two SVM models were trained using gradient descent with a learning rate of α = 0.05, a penalty of C = 1.0, minibatch sizes of m = 100, and T = 500 total iterations. 
 
 * The stochastic gradient decent with momentum β and learning rate α is given as follows:
 
